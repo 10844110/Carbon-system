@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'report_issue' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="qatest.html"><input type="submit" value="Submit"></a>
+</form>
