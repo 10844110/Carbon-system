@@ -6,18 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>番薯國碳制郎</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link href="{% static 'css/signin.css'%}" rel="stylesheet">
 </head>
-<style>
-   @import url("css/signin.css");
-</style>
 <body>
+    {% block main %}
     <div class="index">
         <h1>番薯國碳制郎</h1><hr><br>
-        <form>
-        <input type="account" class="input" placeholder="帳號(身分證)" required="required"><br><br>
-        <input type="password" class="input" placeholder="密碼" required="required"><br><br>
-        <button type="submit" class="singin">登入</button>
+        <form action="/login/" method="post">
+        {% csrf_token %}
+        <input id="IDCARD" type="text" name="IDCARD" class="input" placeholder="帳號(身分證)" required="required"><br><br>
+        <input id="PASSWORD" type="text" name="PASSWORD" class="input" placeholder="密碼" required="required"><br><br>
+        <button type="submit">登入</button><br>
+        <a href="/signup/" style="font-size: 15px; text-decoration: underline;">尚未註冊？</a>
         </form>
+        {% if messages %}
+        {% for message in messages %}
+        <div {% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: red;font-size: 15px;">
+            {{ message }}
+        </div>
+            {% endfor %}
+            {% endif %}
     </div>
+
+    {% endblock %}
 </body>
 </html>

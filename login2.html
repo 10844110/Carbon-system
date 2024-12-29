@@ -7,14 +7,13 @@
     <title>番薯國碳制郎</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
-    <link href="{% static 'css/index.css'%}" rel="stylesheet">
+    <link href="{% static 'css/signin.css'%}" rel="stylesheet">
 </head>
 <body>
     <div class="index">
-        <h1>番薯國碳制郎</h1>
-        <img src="{% static 'images/index1.png' %}"><br><br>
-        <button type="button" class="singin"><a href="/signin/">登入</a></button>
-        <button type="button" class="signup"><a href="/signup/">註冊</a></button>
+        <h1>番薯國碳制郎</h1><hr><br>
+        <a href="{{ firstLogin }}"><button type="button" class="btn btn-outline-success" style="background-color:#00c300;">LINE登入</button></a>
+        <p>驗證前請詳閱<a href="/GDPR/">個資使用說明</a></p>
     </div>
 </body>
 </html>
