@@ -40,3 +40,17 @@ button{
 button:hover{
     background: #A7B7AA;
 }
+input{
+    color: black;
+    width: 40%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+input:hover{
+    background: #A7B7AA;
+}
